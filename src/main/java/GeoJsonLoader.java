@@ -1,5 +1,4 @@
 import model.Coordinate;
-import model.KLM;
 import model.Placemark;
 import model.Polygon;
 import org.json.JSONArray;
@@ -27,13 +26,15 @@ public class GeoJsonLoader {
 
             String name = properties.getString("ADMIN");
             String type = geometry.getString("type");
+            String ISO_A3 = properties.getString("ISO_A3");
 
-            Placemark placemark = new Placemark(name, type, styleId);
+            Placemark placemark = new Placemark(name, ISO_A3, type, styleId);
 
             if(type.equals("Polygon")){
                 Polygon polygon = new Polygon();
                 JSONArray coordinates = geometry.getJSONArray("coordinates").getJSONArray(0);
                 for (Object coordinateObj: coordinates) {
+
                     JSONArray coordinate = (JSONArray) coordinateObj;
                     Coordinate coord = new Coordinate(coordinate.getDouble(0), coordinate.getDouble(1));
                     polygon.addCoordinate(coord);
