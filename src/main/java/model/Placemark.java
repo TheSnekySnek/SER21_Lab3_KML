@@ -18,6 +18,26 @@ public class Placemark {
         this.polygons = new ArrayList<>();
     }
 
+    public String getISO_A3() {
+        return ISO_A3;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getStyleId() {
+        return styleId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public ArrayList<Polygon> getPolygons() {
+        return polygons;
+    }
+
     public void addPolygon(Polygon polygon){
         this.polygons.add(polygon);
     }

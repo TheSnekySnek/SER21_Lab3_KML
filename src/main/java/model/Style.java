@@ -30,4 +30,14 @@ public class Style {
     public String getPolygonColor() {
         return polygonColor;
     }
+
+    @Override
+    public String toString() {
+        return "Style{" +
+                "id='" + id + '\'' +
+                ", lineColor='" + lineColor + '\'' +
+                ", lineWidth=" + lineWidth +
+                ", polygonColor='" + polygonColor + '\'' +
+                '}';
+    }
 }

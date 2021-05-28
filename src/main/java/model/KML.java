@@ -2,16 +2,16 @@ package model;
 
 import java.util.ArrayList;
 
-public class KLM {
+public class KML {
     ArrayList<Placemark> placemarks;
     ArrayList<Style> styles;
 
-    public KLM(){
+    public KML(){
         this.placemarks = new ArrayList<>();
         this.styles = new ArrayList<>();
     }
 
-    public KLM(ArrayList<Placemark> placemarks, ArrayList<Style> styles){
+    public KML(ArrayList<Placemark> placemarks, ArrayList<Style> styles){
         this.placemarks = placemarks;
         this.styles = styles;
     }
@@ -39,8 +39,7 @@ public class KLM {
     @Override
     public String toString() {
         return "KLM{" +
-                "placemarks=" + placemarks +
-                ", styles=" + styles +
+                "placemarks=\n" + placemarks +
                 '}';
     }
 }

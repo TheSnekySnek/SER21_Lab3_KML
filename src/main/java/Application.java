@@ -1,4 +1,4 @@
-import model.KLM;
+import model.KML;
 import model.Style;
 
 import java.io.IOException;
@@ -16,13 +16,18 @@ public class Application {
             return;
         }
 
-        KLM klm = new KLM();
+        KML kml = new KML();
 
-        Style defaultStyle = new Style("default", "7dff0000", 1.5, "00ff0000");
-        klm.addStyle(defaultStyle);
+        Style defaultStyle = new Style("default", "7dff0000", 1.5, "ffffff");
+        kml.addStyle(defaultStyle);
 
-        klm.setPlacemarks(GeoJsonLoader.getPlacemarks(geojson, "default"));
+        kml.setPlacemarks(GeoJsonLoader.getPlacemarks(geojson, "default"));
 
+        try {
+            new KMLConverter(kml).createKMLFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return;
 
     }
