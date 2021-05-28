@@ -35,4 +35,12 @@ public class KLM {
     public ArrayList<Style> getStyles() {
         return styles;
     }
+
+    @Override
+    public String toString() {
+        return "KLM{" +
+                "placemarks=" + placemarks +
+                ", styles=" + styles +
+                '}';
+    }
 }
